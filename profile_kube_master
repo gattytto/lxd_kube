@@ -1,0 +1,20 @@
+config:
+  user.vendor-data: |
+    #cloud-config
+    runcmd:
+      - [ sh, -c, "export PATH=/snap/bin:$PATH" ]
+      - [ sh, -c, "modprobe br_netfilter && echo 'br_netfilter' >> /etc/modules && update-initramfs -u && sysctl -w net.ipv4.ip_forward=1 && sysctl -w net.ipv6.conf.all.forwarding=1"]
+      - [ sh, -c, "echo 'export PATH=/snap/bin:$PATH' >> /root/.bashrc"]
+      - [ sh, -c, "crio config --default > /etc/crio/crio.conf" ]
+      - [ sh, -c, 'sed -i "s/\/var\/lib\/containers\/storage/\/etc\/containers\/storage\/$(hostname -s)/g" /etc/crio/crio.conf' ]
+      - [ sh, -c, 'sed -i "s/\"system\.slice\"/\"pod\"/g" /etc/crio/crio.conf' ]
+      - [ sh, -c, 'sed -i "s/\"systemd\"/\"cgroupfs\"/g" /etc/crio/crio.conf' ]
+      - [ sh, -c, "systemctl enable snap.kubelet.daemon crio" ]
+      - [ sh, -c, "ln -s /etc/systemd/system/snap.kubelet.daemon.service /etc/systemd/system/kubelet.service && systemctl daemon-reload"]
+      - [ sh, -c, "rm -f /etc/cni/net.d/100-crio-bridge.conf" ]
+      - [ sh, -c, "systemctl start crio" ]
+      - [ sh, -c, "echo \"* * * * * root ( /usr/bin/sleep 1 && if ! [ $(/bin/systemctl -q is-active snap.kubelet.daemon) ]; then /usr/bin/snap start kubelet ; fi ) \" >> /etc/crontab" ]
+      - [ sh, -c, "git clone https://github.com/gattytto/kubeinlxd.git /root/kubeinlxd"]
+      - [ sh, -c, "snap install yq"]
+      - [ sh, -c, "systemctl restart cron && sleep 1 && snap stop kubelet && bash /root/kubeinlxd/configgen.sh /root/kubeinlxd/kubeadm.yaml && cd /root/kubeinlxd && bash /root/kubeinlxd/kubeinit_m.sh" ]
+      - [ sh, -c, "sed '$d' /etc/crontab > /etc/crontab_tmp && mv /etc/crontab_tmp /etc/crontab && systemctl restart cron && snap remove yq" ]
