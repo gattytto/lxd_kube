@@ -1,0 +1,16 @@
+#default template for all lxc containers
+config:
+  limits.cpu: 4,5
+  limits.memory: 2048MB
+description: Default LXD profile
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: vmbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: default
