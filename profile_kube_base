@@ -1,0 +1,82 @@
+config:
+  user.user-data: 
+    #cloud-config
+    apt:
+      sources:
+        crio.list:
+          key: | 
+            -----BEGIN PGP PUBLIC KEY BLOCK-----
+            Version: GnuPG v1.4.5 (GNU/Linux)
+
+            mQENBFtkV0cBCADStSTCG5qgYtzmWfymHZqxxhfwfS6fdHJcbGUeXsI5dxjeCWhs
+            XarZm6rWZOd5WfSmpXhbKOyM6Ll+6bpSl5ICHLa6fcpizYWEPa8fpg9EGl0cF12G
+            GgVLnnOZ6NIbsoW0LHt2YN0jn8xKVwyPp7KLHB2paZh+KuURERG406GXY/DgCxUx
+            Ffgdelym/gfmt3DSq6GAQRRGHyucMvPYm53r+jVcKsf2Bp6E1XAfqBrD5r0maaCU
+            Wvd7bi0B2Q0hIX0rfDCBpl4rFqvyaMPgn+Bkl6IW37zCkWIXqf1E5eDm/XzP881s
+            +yAvi+JfDwt7AE+Hd2dSf273o3WUdYJGRwyZABEBAAG0OGRldmVsOmt1YmljIE9C
+            UyBQcm9qZWN0IDxkZXZlbDprdWJpY0BidWlsZC5vcGVuc3VzZS5vcmc+iQE+BBMB
+            CAAoBQJfcJJOAhsDBQkIKusHBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRBN
+            ZDkDdQYKpB0xCACmtCT6ruPiQa4l0DEptZ+u3NNbZfSVGH4fE4hyTjLbzrCxqcoh
+            xJvDKxspuJ85wWFWMtl57+lFFE1KP0AX2XTT+/v2vN1PIfwgOSw3yp2sgWuIXFAi
+            89YSjSh8G0SGAH90A9YFMnTbllzGoGURjSX03iasW3A408ljbDehA6rpS3t3FD7P
+            PnUF6204orYu00Qvc54an/xVJzxupb69MKW5EeK7x8MJnIToT8hIdOdGVD6axsis
+            x+1U71oMK1gBke7p4QPUdhJFpSUd6kT8bcO+7rYouoljFNYkUfwnqtUn7525fkfg
+            uDqqXvOJMpJ/sK1ajHOeehp5T4Q45L/qUCb3iEYEExECAAYFAltkV0cACgkQOzAR
+            t2udZSOoswCdF44NTN09DwhPFbNYhEMb9juP5ykAn0bcELvuKmgDwEwZMrPQkG8t
+            Pu9n
+            =42uC
+            -----END PGP PUBLIC KEY BLOCK-----
+          source: "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.10/ /"
+        crio2.list:
+          key: | 
+            -----BEGIN PGP PUBLIC KEY BLOCK-----
+            Version: GnuPG v1.4.5 (GNU/Linux)
+
+            mQENBFtkV0cBCADStSTCG5qgYtzmWfymHZqxxhfwfS6fdHJcbGUeXsI5dxjeCWhs
+            XarZm6rWZOd5WfSmpXhbKOyM6Ll+6bpSl5ICHLa6fcpizYWEPa8fpg9EGl0cF12G
+            GgVLnnOZ6NIbsoW0LHt2YN0jn8xKVwyPp7KLHB2paZh+KuURERG406GXY/DgCxUx
+            Ffgdelym/gfmt3DSq6GAQRRGHyucMvPYm53r+jVcKsf2Bp6E1XAfqBrD5r0maaCU
+            Wvd7bi0B2Q0hIX0rfDCBpl4rFqvyaMPgn+Bkl6IW37zCkWIXqf1E5eDm/XzP881s
+            +yAvi+JfDwt7AE+Hd2dSf273o3WUdYJGRwyZABEBAAG0OGRldmVsOmt1YmljIE9C
+            UyBQcm9qZWN0IDxkZXZlbDprdWJpY0BidWlsZC5vcGVuc3VzZS5vcmc+iQE+BBMB
+            CAAoBQJfcJJOAhsDBQkIKusHBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRBN
+            ZDkDdQYKpB0xCACmtCT6ruPiQa4l0DEptZ+u3NNbZfSVGH4fE4hyTjLbzrCxqcoh
+            xJvDKxspuJ85wWFWMtl57+lFFE1KP0AX2XTT+/v2vN1PIfwgOSw3yp2sgWuIXFAi
+            89YSjSh8G0SGAH90A9YFMnTbllzGoGURjSX03iasW3A408ljbDehA6rpS3t3FD7P
+            PnUF6204orYu00Qvc54an/xVJzxupb69MKW5EeK7x8MJnIToT8hIdOdGVD6axsis
+            x+1U71oMK1gBke7p4QPUdhJFpSUd6kT8bcO+7rYouoljFNYkUfwnqtUn7525fkfg
+            uDqqXvOJMpJ/sK1ajHOeehp5T4Q45L/qUCb3iEYEExECAAYFAltkV0cACgkQOzAR
+            t2udZSOoswCdF44NTN09DwhPFbNYhEMb9juP5ykAn0bcELvuKmgDwEwZMrPQkG8t
+            Pu9n
+            =42uC
+            -----END PGP PUBLIC KEY BLOCK-----  
+          source: "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/1.21/xUbuntu_20.10/ /"
+    package_upgrade: true
+    packages:
+      - ssh
+      - snapd
+      - kitty
+      - gnupg
+      - cri-o
+      - cri-tools
+      - cri-o-runc
+      - squashfuse
+      - iptables
+      - containernetworking-plugins
+      - conntrack
+      - git
+    locale: change-accordingly
+    timezone: change-accordingly
+    users:
+      - name: root
+        ssh-authorized-keys:
+          - ssh-rsa 123...456 rsa-key-123456
+    bootcmd:
+      - [ sh, -c, "mount --make-rshared /" ]
+    snap:
+      commands:
+        00: apt install -y snapd
+        01: snap install core 
+        02: snap install --classic kubeadm
+        03: snap install --classic kubelet
+        04: snap set kubelet config=/var/lib/kubelet/config.yaml container-runtime=remote container-runtime-endpoint=unix:///run/crio/crio.sock feature-gates=IPv6DualStack=true kubeconfig=/etc/kubernetes/kubelet.conf bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf network-plugin=cni node-ip=$(ip -6 -o addr show dev $(ip route get 8.8.8.8 | sed -nr 's/.*dev ([^\ ]+).*/\1/p')| awk "{split(\$4,a,\"/\");print a[1]}" |grep 2001)
