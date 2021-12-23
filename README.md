@@ -87,7 +87,7 @@ lxc exec fun-sunbeam -- tail -f /var/log/cloud-init.log
      nodeSelector: all()
 
    EOF'
-```
+  ```
 
 * Check everything went ok:
   ```verilog
