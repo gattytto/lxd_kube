@@ -1,0 +1,7 @@
+config: {}
+description: ""
+devices:
+  config:
+    source: cloud-init:config
+    type: disk
+name: kube-vm
