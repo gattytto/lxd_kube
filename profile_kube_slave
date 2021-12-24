@@ -13,5 +13,5 @@ config:
       - [ sh, -c, "systemctl enable snap.kubelet.daemon crio" ]
       - [ sh, -c, "ln -s /etc/systemd/system/snap.kubelet.daemon.service /etc/systemd/system/kubelet.service && systemctl daemon-reload"]
       - [ sh, -c, "rm -f /etc/cni/net.d/100-crio-bridge.conf"]
-      - [ sh, -c, "systemctl start crio" ]
+      - [ sh, -c, "systemctl start crio && mkdir -p /etc/kubernetes/manifests" ]
       - [ sh, -c, "git clone https://github.com/gattytto/kubeinlxd.git /root/kubeinlxd"]
