@@ -119,3 +119,9 @@ lxc exec fun-sunbeam -- tail -f /var/log/cloud-init.log
 	NAMESPACE     NAME                                DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES                              SELECTOR
 	kube-system   replicaset.apps/coredns-64897985d   2         2         2       88m   coredns      k8s.gcr.io/coredns/coredns:v1.8.6   k8s-app=kube-dns,pod-template-hash=64897985d
   ```
+
+* Add the Youki runtime to the slave and create runtimeClass from the master
+  ```sh
+    lxc exec fun-sunbeam -- bash /root/kubeinlxd/youki.sh
+    lxc exec beloved-oryx -- bash /root/kubeinlxd/youki.sh
+  ```
