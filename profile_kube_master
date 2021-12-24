@@ -17,4 +17,4 @@ config:
       - [ sh, -c, "git clone https://github.com/gattytto/kubeinlxd.git /root/kubeinlxd"]
       - [ sh, -c, "snap install yq"]
       - [ sh, -c, "systemctl restart cron && sleep 1 && snap stop kubelet && bash /root/kubeinlxd/configgen.sh /root/kubeinlxd/kubeadm.yaml && cd /root/kubeinlxd && bash /root/kubeinlxd/kubeinit_m.sh" ]
-      - [ sh, -c, "sed '$d' /etc/crontab > /etc/crontab_tmp && mv /etc/crontab_tmp /etc/crontab && systemctl restart cron && snap remove yq" ]
+      - [ sh, -c, "sed '$d' /etc/crontab > /etc/crontab_tmp && mv /etc/crontab_tmp /etc/crontab && systemctl restart cron && snap remove yq && mkdir -p /etc/kubernetes/manifests" ]
