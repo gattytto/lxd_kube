@@ -1,0 +1,11 @@
+config:
+  lvm.thinpool_name: LXDThinPool
+  lvm.vg_name: shared
+  source: shared
+  volatile.initial_source: /dev/zd0
+  volume.block.filesystem: xfs
+  volume.size: 50GB
+description: ""
+name: shared
+driver: lvm
+#/dev/zd0 => a zfs volume created with fixed size to have a zvol reference thus in /dev
