@@ -15,5 +15,5 @@ config:
       - [ sh, -c, "rm -f /etc/cni/net.d/100-crio-bridge.conf"]
       - [ sh, -c, "systemctl start crio && mkdir -p /etc/kubernetes/manifests" ]
       - [ sh, -c, "git clone https://github.com/gattytto/kubeinlxd.git /root/kubeinlxd"]
-      - [ sh, -c, "echo \"vm.max_map_count=200000\" >> /etc/sysctl.conf && sysctl -p" ]
+      - [ sh, -c, "echo \"vm.max_map_count=300000\" >> /etc/sysctl.conf && sysctl -p" ]
       - [ sh, -c, "mkdir -p /data/userdata" ]
