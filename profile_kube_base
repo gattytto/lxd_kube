@@ -73,6 +73,8 @@ config:
           - ssh-rsa 123...456 rsa-key-123456
     bootcmd:
       - [ sh, -c, "mount --make-rshared /" ]
+      - [ sh, -c, "mkdir -p /etc/kubernetes/manifests" ]
+      - [ sh, -c, "echo \"vm.max_map_count=\" >> /etc/sysctl.conf && sysctl -p" ]
     snap:
       commands:
         00: apt install -y snapd
