@@ -65,28 +65,28 @@ lxc exec fun-sunbeam -- tail -f /var/log/cloud-init.log
 * create the IPPools
   ```sh
   lxc exec fun-sunbeam -- sh -c 'export KUBECONFIG=/etc/kubernetes/admin.conf && kubectl exec -ti -n kube-system calicoctl -- /calicoctl create -f - <<EOF
-   ---
-   apiVersion: projectcalico.org/v3
-   kind: IPPool
-   metadata:
-     name: pods
-   spec:
-     cidr: 1100:200::/104
-     natOutgoing: true
-     disabled: false
-     nodeSelector: all()
-   ---
-   apiVersion: projectcalico.org/v3
-   kind: IPPool
-   metadata:
-     name: service
-   spec:
-     cidr: 1101:300:1:2::/112
-     natOutgoing: true
-     disabled: false
-     nodeSelector: all()
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: pods
+spec:
+  cidr: 1100:200::/104
+  natOutgoing: true
+  disabled: false
+  nodeSelector: all()
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: service
+spec:
+  cidr: 1101:300:1:2::/112
+  natOutgoing: true
+  disabled: false
+  nodeSelector: all()
 
-   EOF'
+EOF'
   ```
 
 * Check everything went ok:
