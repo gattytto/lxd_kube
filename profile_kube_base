@@ -1,5 +1,5 @@
 config:
-  user.user-data: 
+  user.user-data: |
     #cloud-config
     apt:
       sources:
