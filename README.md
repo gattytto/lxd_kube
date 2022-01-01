@@ -12,7 +12,7 @@
 *  dhcp ipv4
 * asumes xfs/ext4 filesystem for vm's (overlayfs inside vm's limitations)
 
-###NOTES
+### NOTES
 * Change profile_kube_base with ssh keys and timezone info accordingly, then add them to LXC
 * Why VM's and not just containers?:
 **1: kubernetes containers(from runtimes) bypass both kube/namespace/runtime and LXC memory boundaries, reporting host's memory (haskell: the impossible happened).
