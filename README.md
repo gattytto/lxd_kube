@@ -20,7 +20,7 @@
 **VM-mode: if host filesystem is ZFS create a fixed size volume and use it's /dev/zdX endpoint to create a storage pool in LXD
 **CT-mode: container-mode LXC containers can share a zfs fixed size volume(using `mkfs.xfs -n ftype=1 /dev/zdX`) there's a prefixed folder in /etc/containers/storage/vm-name in crio configs patch that doesn't affect vm behavior
 
-###STEPS
+### STEPS
 * launch master
   ```sh
   lxc launch images:ubuntu/21.10/cloud -p default -p kube -p kube-master -p kube-vm --vm
