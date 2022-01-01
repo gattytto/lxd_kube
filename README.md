@@ -38,7 +38,7 @@
 Spin-up process can be followed by:
 ```sh
 lxc exec fun-sunbeam -- tail -f /var/log/syslog
-lxc exec fun-sunbeam -- tail -f /var/log/cloud-init.log
+lxc exec fun-sunbeam -- journalctl -ft cloud-init
 ```
 
 * add calico networking (part 1)
