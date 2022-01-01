@@ -8,8 +8,8 @@
 * calico+bird6 real and fake ranges
 * vm-mode kubernetes nodes (using snap)
 * asumes openvswitch vmbr0 bridge providing: 
-*  routing and automatic ipv6
-*  dhcp ipv4
+  *  routing and automatic ipv6
+  *  dhcp ipv4 + internet access
 * asumes xfs/ext4 filesystem for vm's (overlayfs inside vm's limitations)
 
 ### NOTES
