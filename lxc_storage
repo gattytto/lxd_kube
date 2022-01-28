@@ -9,3 +9,4 @@ description: ""
 name: shared
 driver: lvm
 #/dev/zd0 => a zfs volume created with fixed size to have a zvol reference thus in /dev
+#example: lxc storage create shared lvm source=/dev/zd0 volume.size=50GB volume.block.filesystem=xfs
