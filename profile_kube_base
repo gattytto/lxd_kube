@@ -50,7 +50,7 @@ config:
             Pu9n
             =42uC
             -----END PGP PUBLIC KEY BLOCK-----  
-          source: "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/1.21/xUbuntu_20.10/ /"
+          source: "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/1.23/xUbuntu_20.10/ /"
     package_upgrade: true
     packages:
       - ssh
