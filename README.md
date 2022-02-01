@@ -74,12 +74,12 @@ lxc exec fun-sunbeam -- journalctl -ft cloud-init
   ```
 
 * create the IPPools
-  NOTE: upgrade cluster to latest version in master node or use:
-  * --allow-version-mismatch to override in the calicoctl command 
+  NOTE: upgrade cluster to latest version in master node
 ```sh
   kubeadm upgrade apply latest --allow-experimental-upgrades -y
 ``` 
- 
+  or override the calicoctl command with this to avoid failure:
+  * --allow-version-mismatch 
 ```sh
   lxc exec fun-sunbeam -- sh -c 'export KUBECONFIG=/etc/kubernetes/admin.conf && kubectl exec -ti -n kube-system calicoctl -- /calicoctl create -f - <<EOF
 ---
