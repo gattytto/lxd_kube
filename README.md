@@ -27,7 +27,7 @@
 ### STEPS
 * launch master
   ```sh
-  lxc launch images:ubuntu/21.10/cloud -p default -p kube -p kube-master -p kube-vm --vm
+  lxc launch images:ubuntu/22.04/cloud -p default -p kube -p kube-master -p kube-vm --vm
   lxc list
   +-------------+---------+---------------------+--------------------------------------------------+-----------------+-----------+
   |    NAME     |  STATE  |        IPV4         |                      IPV6                        |      TYPE       | SNAPSHOTS |
