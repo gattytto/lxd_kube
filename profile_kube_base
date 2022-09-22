@@ -81,4 +81,4 @@ config:
         02: snap install core
         03: snap install --classic kubeadm
         04: snap install --classic kubelet
-        05: snap set kubelet config=/var/lib/kubelet/config.yaml container-runtime=remote container-runtime-endpoint=unix:///run/crio/crio.sock feature-gates=IPv6DualStack=true kubeconfig=/etc/kubernetes/kubelet.conf bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf network-plugin=cni node-ip=$(ip -6 -o addr show dev $(ip route get 8.8.8.8 | sed -nr 's/.*dev ([^\ ]+).*/\1/p')| awk "{split(\$4,a,\"/\");print a[1]}" |grep 2001)
+        05: snap set kubelet config=/var/lib/kubelet/config.yaml container-runtime=remote container-runtime-endpoint=unix:///run/crio/crio.sock kubeconfig=/etc/kubernetes/kubelet.conf bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf network-plugin=cni node-ip=$(ip -6 -o addr show dev $(ip route get 8.8.8.8 | sed -nr 's/.*dev ([^\ ]+).*/\1/p')| awk "{split(\$4,a,\"/\");print a[1]}" |grep 2001)
