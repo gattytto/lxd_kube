@@ -64,6 +64,7 @@ config:
       - containernetworking-plugins
       - conntrack
       - git
+      - cron
     locale: change-accordingly
     timezone: change-accordingly
     users:
