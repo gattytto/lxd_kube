@@ -74,6 +74,7 @@ config:
     bootcmd:
       - [ sh, -c, "mount --make-rshared /" ]
       - [ sh, -c, "mkdir -p /etc/kubernetes/manifests" ]
+      - [ sh, -c, 'echo "::1 $(hostname)" >> /etc/hosts' ]
     snap:
       commands:
         00: apt update
