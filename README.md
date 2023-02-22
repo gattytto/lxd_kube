@@ -143,3 +143,7 @@ EOF'
     lxc exec fun-sunbeam -- bash /root/kubeinlxd/youki.sh
     lxc exec beloved-oryx -- bash /root/kubeinlxd/youki.sh
   ```
+* Add monitoring api to kubernetes
+  ```sh
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  ```
