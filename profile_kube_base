@@ -1,4 +1,32 @@
 config:
+  user.netwrok-config: |
+    network:
+      version: 2
+      ethernets:
+        - id0:
+            dhcp4: false
+            dhcp6: true
+            accept-ra: yes
+            match:
+              name: enp*
+            nameservers:
+              addresses:
+                - 2001:470:1b1e:c000::a
+            routes:
+              - to: ::/0
+                scope: link
+        - id1:
+             dhcp4: false
+            dhcp6: true
+            accept-ra: yes
+            match:
+              name: eth*
+            nameservers:
+              addresses:
+                - 2001:470:1b1e:c000::a
+            routes:
+              - to: ::/0
+                scope: link
   user.user-data: |
     #cloud-config
     apt:
